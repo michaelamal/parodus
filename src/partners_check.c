@@ -96,6 +96,8 @@ int validate_partner_id(wrp_msg_t *msg, partners_t **partnerIds)
 			if(NULL != partnersList->partner_ids[j]) {
 		                ParodusPrint("partnersList->partner_ids[%lu] = %s\n",j, partnersList->partner_ids[j]);
 				ParodusPrint("msg->u.event.partner_ids->partner_ids[%lu] = %s\n",i, msg->u.event.partner_ids->partner_ids[i]);
+                               ParodusInfo("partnersList->partner_ids[%lu] = %s\n",j, partnersList->partner_ids[j]);
+                               ParodusInfo("msg->u.event.partner_ids->partner_ids[%lu] = %s\n",i, msg->u.event.partner_ids->partner_ids[i]);
 		                if(strcasecmp(partnersList->partner_ids[j], msg->u.event.partner_ids->partner_ids[i]) == 0)
 		                {
 		                    ParodusInfo("partner_id match found\n");
@@ -162,6 +164,9 @@ int validate_partner_id(wrp_msg_t *msg, partners_t **partnerIds)
 			{
 		                ParodusPrint("partnersList->partner_ids[%lu] = %s\n",j, partnersList->partner_ids[j]);
 				ParodusPrint("msg->u.req.partner_ids->partner_ids[%lu] = %s\n",i, msg->u.req.partner_ids->partner_ids[i]);
+			       ParodusInfo("partnersList->partner_ids[%lu] = %s\n",j, partnersList->partner_ids[j]);
+                               ParodusInfo("msg->u.event.partner_ids->partner_ids[%lu] = %s\n",i, msg->u.event.partner_ids->partner_ids[i]);
+
 		                if(strcasecmp(partnersList->partner_ids[j], msg->u.req.partner_ids->partner_ids[i]) == 0)
 		                {
 		                    ParodusInfo("partner_id match found\n");
